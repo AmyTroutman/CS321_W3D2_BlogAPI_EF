@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using CS321_W3D2_BlogAPI_EF.Data;
 
 namespace CS321_W3D2_BlogAPI_EF
 {
@@ -27,7 +28,7 @@ namespace CS321_W3D2_BlogAPI_EF
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            services.AddDbContext<BlogContext>();
             // configure PostService so it will be injected into controller
             services.AddSingleton<IPostService, PostService>();
         }

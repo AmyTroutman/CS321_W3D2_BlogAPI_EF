@@ -39,7 +39,8 @@ namespace CS321_W3D2_BlogAPI_EF.Services
         public Post Get(int id)
         {
             // return the specified Post or null if not found
-            return _posts.FirstOrDefault(p => p.Id == id);
+            return _blogContext.Posts.Include(prop => prop.Comments)
+                _posts.FirstOrDefault(p => p.Id == id);
         }
 
         public IEnumerable<Post> GetAll()

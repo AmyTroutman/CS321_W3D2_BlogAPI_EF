@@ -7,5 +7,6 @@ namespace CS321_W3D2_BlogAPI_EF.Models
         public string Title { get; set; }
         public string Body { get; set; }
         public int PostId { get; set; }
+        public Post Post { get; set; }
     }
 }
